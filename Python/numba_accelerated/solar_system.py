@@ -35,6 +35,7 @@ def get_solar_system_masses(m_unit):
         15.97219e27/m_unit,     # earth
         6.4185e26/m_unit,       # mars
         1.89813e30/m_unit,      # jupiter
+        5.68319e29/m_unit,      # saturn
         8.68103e28/m_unit,      # uranus lol
         1.0241e27/m_unit,       # neptune
         1.307e25/m_unit,        # pluto (not actually a planet)

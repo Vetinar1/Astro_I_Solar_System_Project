@@ -7,6 +7,7 @@ import os
 
 # plot library
 import matplotlib.pyplot as plt
+import time
 
 
 """
@@ -334,5 +335,11 @@ def run():
 if __name__ == "__main__":
 
     print("Starting Simulation")
+    time1 = time.time()
     run()
+    time2 = time.time()
+
+    # Format strings are extremely useful, even if you cant remember all the bazillion options:
+    # https://docs.python.org/3/library/string.html#formatstrings
+    print(f"Took {time2 - time1:.2f}s")
     print("Done!")

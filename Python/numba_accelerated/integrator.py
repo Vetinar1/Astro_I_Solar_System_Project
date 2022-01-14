@@ -26,6 +26,8 @@ def grav_bruteforce(m, p, a, g):
 
     # for all particles
     for i in prange(m.shape[0]):        # prange = numba parallel range
+        a[i] = np.zeros(3)
+
         # for all other particles
         for j in range(m.shape[0]):
             # no self interaction
@@ -34,8 +36,9 @@ def grav_bruteforce(m, p, a, g):
 
             dist_vec = p[i] - p[j]
             dist = np.sqrt(np.sum(dist_vec * dist_vec))
-            a[i] += -g * m[i] * dist_vec / (dist ** 3)
+            a[i] += -g * m[j] * dist_vec / (dist ** 3)
 
+    return a
 
 @nb.jit(nopython=True, parallel=True)
 def find_a_max(a):
